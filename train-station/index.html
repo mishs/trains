@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="utf-8">
+ <title>Train Station</title>
+</head>
+
+<body>
+
+ <p id="info"></p>
+
+</body>
+
+</html>
+<script type="text/javascript">
+
+function Train(data) {
+ this.number = data.number;
+ this.direction = data.direction;
+ this.departure_time = data.departure_time;
+ this.arrival_time = data.arrival_time;
+ this.stops = data.stops;
+ this.capacity = data.capacity;
+ this.passengers = data.passengers;
+ this.board = function(datap) {
+   this.passengers.push(datap);
+
+
+    let southTrain = trains[1];
+    let northTrain = trains[0]
+    // let southTrain = new Train(data);
+
+
+    for (let i = 0; i < trains.length; i++) {
+      let t = trains[i];
+      if (t.capacity <= 200) {
+        // southTrain.board(waiting_passengers);
+      }
+      alert('enter');
+
+      else{
+        alert('Train is full- next train please');
+
+      }
+    }
+
+      // for (let i = 0; i < waiting_passengers.length; i++) {
+      //
+      //   let p = waiting_passengers[i];
+      //   if (p.sex) { // female
+      //     northTrain.board(p); //female
+      //   } else {
+      //     southTrain.board(p); //male
+      //   }
+      // }
+      // document.getElementById('info').innerHTML =northTrain.passengers;
+      //console.log(southTrain.passengers[]);
+      console.log(northTrain);
+
+
+ };
+}
+ let waiting_passengers = [{
+     id: 1,
+     name: 'Mish',
+     height: '6',
+     skin_colour: 'brown',
+     age: 25,
+     sex: 1
+   },
+   {
+     id: 2,
+     name: 'Beke',
+     height: '5.8',
+     skin_colour: 'brown',
+     age: 22,
+     sex: 0
+   },
+   {
+     id: 3,
+     name: 'Sipho',
+     height: '5.8',
+     skin_colour: 'brown',
+     age: 22,
+     sex: 1
+   },
+   {
+     id: 4,
+     name: 'Mandy',
+     height: '5.8',
+     skin_colour: 'brown',
+     age: 22,
+     sex: 0
+   },
+   {
+     id: 5,
+     name: 'Lloyd',
+     height: '5.8',
+     skin_colour: 'brown',
+     age: 22,
+     sex: 1
+   },
+ ];
+
+
+ let trains = [{
+     number: 1001,
+     direction: 'North',
+     departure_time: '08:00',
+     arrival_time: '09:20',
+     stops: 7,
+     capacity: 100,
+     passengers: [],
+     // board: function(waiting_passengers) {
+     //   this.passengers.push(waiting_passengers);
+     // }
+   },
+   {
+     number: 3005,
+     direction: 'South',
+     departure_time: '08:10',
+     arrival_time: '09:05',
+     stops: 5,
+     capacity: 200,
+     passengers: [],
+     // board: function(waiting_passengers) {
+     //   this.passengers.push(waiting_passengers);
+     //
+     // }
+   }
+ ];
+ let southTrain_data = trains[0];
+ let  southTrain = new Train(southTrain_data);
+ southTrain.board(waiting_passengers[0]);
+debugger;
+</script>
